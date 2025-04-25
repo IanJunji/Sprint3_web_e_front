@@ -2,7 +2,23 @@ import '../styles/sobre.css'
 function Sobre(){
     return(
         <>
-        <h4>Componente sobre</h4>
+        <div className="container1">
+            <h1>Sobre nós</h1>
+            <div className="cards">
+                <div className="card">
+                    <h1>Segurança</h1>
+                </div>
+                <div className="card">
+                    <h1>Controle</h1>
+                </div>
+                <div className="card">
+                    <h1>Precisão</h1>
+                </div>
+                <div className="card">
+                    <h1>Confiança</h1>
+                </div>
+            </div>
+        </div>
         </>
     )
 }
