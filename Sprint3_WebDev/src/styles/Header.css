@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Nunito';
+  font-family: 'Lexend Mega';
+  letter-spacing: -2px;
 }
 
 
@@ -23,8 +24,9 @@ nav{
   .logo{
     margin-right: auto;
     font-weight: 500;
-    font-size: clamp(0.6rem, 3vw, 1.7rem);
+    font-size: clamp(0.5rem, 3vw, 1.5rem);
     font-family: "Lexend Mega";
+    letter-spacing: 0;
   }
   .logo:hover{
     background-color: transparent;
@@ -40,7 +42,7 @@ nav{
   a{
     text-decoration: none;
     color: white;
-    font-size: clamp(0.7rem, 2vw,1.2rem);
+    font-size: clamp(0.4rem, 1.6vw,1rem);
     background-color: transparent;
     padding: clamp(0.2rem, 1vw, 0.4rem);
   }
@@ -57,12 +59,14 @@ nav{
   color: white;
   margin-top: 20vh;
   margin-bottom: 1rem;
+
 }
 p{
   color: white;
   width: 50%;
   margin-bottom: 2rem;
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 0.9rem);
+  line-height: 20px;
 }
 .botao {
   display: inline-block;
@@ -81,6 +85,14 @@ p{
   background: linear-gradient(to right, #00bbf9, #00f5d4);
   box-shadow: 0 4px 12px rgba(0, 187, 249, 0.3);
   color: rgb(0, 0, 30);
+}
+@media(max-width:1200px){
+  .container>h1{
+    width: 70%;
+  }
+  .container>p{
+    width: 60%;
+  }
 }
 @media(max-width:800px) {
   p{
