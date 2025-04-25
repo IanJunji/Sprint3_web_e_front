@@ -24,6 +24,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    filter:grayscale(100%);
+    transition: all 0.3s ease;
     h1{
         text-align: center;
     color: white;
@@ -32,6 +34,27 @@
     font-family: "Lexend Mega";
     margin-top: 100%;
     }
+}
+.card:hover{
+    filter: none;
+    transform: scale(1.03);
+}
+.card.selecionado {
+    transform: scale(1.05);
+    filter: none;
+  }
+.card-card1{
+    background-image:url(../images/card1.avif);
+}
+.card-card2{
+    background-image: url(../images/card2.jpg);
+    
+}
+.card-card3{
+    background-image: url(../images/card3.jpg);
+}
+.card-card4{
+    background-image: linear-gradient(to bottom, rgb(46,46,46,0.4), rgb(46,46,46,0.2)), url(../images/card4.avif);
 }
 @media(max-width:1200px){
     .cards{
