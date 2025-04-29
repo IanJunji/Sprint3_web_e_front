@@ -11,22 +11,22 @@ function Contato() {
   const accordions = [
     {
       id: 1,
-      titulo: "Recomendação contra fraude",
-      conteudo: "Jamais compartilhe seus dados bancários por mensagens..."
+      titulo: "Como é feito o controle do estoque?",
+      conteudo: "O controle é feito através de cameras pocisionadas estratégicamente no estoque"
     },
     {
       id: 2,
-      titulo: "Atenção: golpe na venda de aparelhos de medição",
+      titulo: "Quais os requisitos do local?",
       conteudo: "Evite comprar dispositivos não certificados pela Anvisa..."
     },
     {
       id: 3,
-      titulo: "Dúvidas sobre o serviço da Stocam",
+      titulo: "Qual o tamanho máximo do estoque?",
       conteudo: "Confira nossa central de ajuda antes de enviar uma mensagem..."
     },
     {
       id: 4,
-      titulo: "Formas de contato",
+      titulo: "Como a manutenção é feita?",
       conteudo: "Você pode nos contatar por e-mail, telefone ou WhatsApp..."
     },
   ];

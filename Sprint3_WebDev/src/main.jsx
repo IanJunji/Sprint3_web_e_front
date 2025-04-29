@@ -4,6 +4,7 @@ import Header from './components/header'
 import Sobre from './components/sobre'
 import Footer from './components/Footer'
 import Contato from './components/contato'
+import Form from './components/form'
 
 
 createRoot(document.getElementById('root')).render(
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
     <Header />
     <Sobre />
     <Contato />
+    <Form />
     <Footer />
   </StrictMode>
 )
