@@ -49,7 +49,7 @@
 }
 .accordion-content.open {
 
-  max-height: 200px; /* ajuste conforme o conteúdo */
+  max-height: 200px; 
   border-bottom: 1px solid #ccc;
   p{
     color: #1a1a1aa9;

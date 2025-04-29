@@ -9,7 +9,7 @@ function Header() {
         <a className ="logo" href="#">STOCAM</a>
         <div className="navs">
         <a href="">Sobre</a>
-        <a href="">Benefícios</a>
+        <a href="">Serviço</a>
         <a href="">Contato</a>
         </div>
         

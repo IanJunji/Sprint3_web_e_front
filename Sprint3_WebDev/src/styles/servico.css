@@ -1,0 +1,85 @@
+.beneficios_content {
+  text-align: center;
+
+  .header {
+    background-image: url(../images/background_services.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 15vw;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    z-index: 0;
+
+    h1,
+    h2 {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 1rem;
+    }
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: white;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-top: 5rem;
+  }
+
+  span {
+    background: linear-gradient(to right, #00f5d4, #00bbf9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  h2 {
+    color: #1a1a1a91;
+    font-weight: 500;
+    margin-bottom: 4vh;
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+  }
+  h3{
+    z-index: 3;
+    position: absolute;
+    bottom: 15%; 
+    right: 10%;
+    color: white;
+  }
+  .botao {
+    z-index: 3;
+    position: absolute;
+    bottom: 5%; 
+    right: 10%;
+    display: inline-block;
+    padding: clamp(0.6rem, 2vw, 1rem) clamp(1.8rem, 2vw, 7rem);
+    font-size: clamp(0.7rem, 2vw, 1.1rem);
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(7, 7, 51);
+    background: linear-gradient(to right, #00f5d4, #00bbf9);
+    border: none;
+    border-radius: 6px;
+    transition: background 0.4s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .botao:hover {
+    background: linear-gradient(to right, #00bbf9, #00f5d4);
+    box-shadow: 0 4px 12px rgba(0, 187, 249, 0.3);
+    color: rgb(0, 0, 30);
+  }
+}

@@ -65,7 +65,7 @@
     height: 580px;
     align-self: stretch;
     text-align: center;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .subtitulo {
