@@ -1,0 +1,61 @@
+.contato_textos {
+    padding: 4vh 10vw;
+    text-align: center;
+    font-weight: 800;
+  h1 {
+    color: #1a1a1a;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1vh;
+  }
+  h3{
+    color: #1a1a1a91;
+    font-weight: 500;
+    margin-bottom: 4vh;
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+  }
+  h2{
+    color: #1a1a1a;
+    font-weight: 800;
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+.accordion {
+  margin-top: 2rem;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #f0f0f0;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 2vw, 1.3rem);
+  font-weight: bold;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid #ccc;
+}
+.accordion-header:hover {
+  background: #e8e8e8;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f9f9f9;
+}
+.accordion-content.open {
+
+  max-height: 200px; /* ajuste conforme o conteúdo */
+  border-bottom: 1px solid #ccc;
+  p{
+    color: #1a1a1aa9;
+    font-weight: 400;
+    text-align: start;
+    margin: auto 0;
+    padding: 1rem;
+  }
+}
