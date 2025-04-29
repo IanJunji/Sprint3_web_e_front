@@ -4,7 +4,7 @@
     font-weight: 800;
   h1 {
     color: #1a1a1a;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1vh;
   }
   h3{

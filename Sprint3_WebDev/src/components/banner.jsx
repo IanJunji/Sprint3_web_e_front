@@ -1,6 +1,6 @@
-import "../styles/servico.css";
+import "../styles/banner.css";
 
-function Servico() {
+function Banner() {
   return (
     <>
       <section className="beneficios_content">
@@ -12,7 +12,7 @@ function Servico() {
             Explore os beneficios da melhor solução de controle de estoque do
             mercado.
           </h2>
-          <h3>O novo mundo do controle de armazenagem.</h3>
+          <h3>Faça parte do novo mundo do controle de armazenagem.</h3>
           <a className='botao' href="#">Vamos!</a>
         </div>
       </section>
@@ -20,4 +20,4 @@ function Servico() {
   );
 }
 
-export default Servico;
+export default Banner;

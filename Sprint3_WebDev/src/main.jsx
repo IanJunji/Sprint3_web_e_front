@@ -5,14 +5,14 @@ import Sobre from './components/sobre'
 import Footer from './components/Footer'
 import Contato from './components/contato'
 import Form from './components/form'
-import Servico from './components/servico'
+import Banner from './components/banner'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Header />
     <Sobre />
-    <Servico />
+    <Banner />
     <Contato />
     <Form />
     <Footer />
