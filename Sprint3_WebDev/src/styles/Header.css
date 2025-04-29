@@ -115,16 +115,19 @@ p{
   nav {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     
     .logo {
-      margin-right: 0;
-      text-align: center;
+      font-size: clamp(1.3rem, 5vw, 2.5rem);
     }
     
     .navs {
       width: 100%;
       justify-content: center;
+      
+      a {
+        font-size: clamp(0.8rem, 3.5vw, 1.5rem);
+      }
     }
   }
   
@@ -150,6 +153,10 @@ p{
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem;
+    
+    a {
+      font-size: clamp(1.3rem, 4vw, 1.6rem);
+    }
   }
   
   .container > h1 {
