@@ -1,6 +1,6 @@
 # Stocam - Sistema de Controle de Estoque
 
-![Stocam Logo](src/images/header-backgorund.jpg)
+![Stocam Logo](Sprint3_WebDev/src/images/logo.png)
 
 Stocam é uma aplicação web moderna desenvolvida para gerenciamento de estoque, oferecendo uma interface intuitiva e responsiva para controle de produtos e inventário.
 
