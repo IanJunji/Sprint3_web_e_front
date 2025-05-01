@@ -32,7 +32,7 @@ function Contato() {
   ];
 
   return (
-    <div className="contato_textos">
+    <div className="contato_textos" id="contato">
       <h1>Contato - Stocam</h1>
       <h3>
         Fale com um de nossos representantes para saber mais informações e contratar nosso serviço.

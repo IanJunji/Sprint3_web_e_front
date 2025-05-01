@@ -3,7 +3,7 @@ import "../styles/banner.css";
 function Banner() {
   return (
     <>
-      <section className="beneficios_content">
+      <section className="beneficios_content" id="banner">
         <div className="header">
           <h1>
             Impulsione seu negócio <span>com Stocam</span>
