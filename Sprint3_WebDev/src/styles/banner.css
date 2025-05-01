@@ -37,7 +37,7 @@
   }
 
   h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.2rem, 4vw, 3rem);
     margin-top: 5rem;
   }
 
@@ -52,7 +52,7 @@
     color: #1a1a1a91;
     font-weight: 500;
     margin-bottom: 4vh;
-    font-size: clamp(0.8rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2.5vw, 1.5rem);
   }
   h3{
     z-index: 3;
@@ -60,6 +60,7 @@
     bottom: 15%; 
     right: 10%;
     color: white;
+    font-size: clamp(0.8rem, 2vw, 1.3rem);
   }
   .botao {
     z-index: 3;
@@ -68,7 +69,7 @@
     right: 10%;
     display: inline-block;
     padding: clamp(0.6rem, 2vw, 1rem) clamp(1.8rem, 2vw, 7rem);
-    font-size: clamp(0.7rem, 2vw, 1.1rem);
+    font-size: clamp(0.7rem, 1.8vw, 1.1rem);
     font-weight: 600;
     text-decoration: none;
     color: rgb(7, 7, 51);
@@ -81,5 +82,19 @@
     background: linear-gradient(to right, #00bbf9, #00f5d4);
     box-shadow: 0 4px 12px rgba(0, 187, 249, 0.3);
     color: rgb(0, 0, 30);
+  }
+}
+
+@media (max-width:1500px) {
+
+  h1,h2 {
+   right: 20%;
+  }
+}
+
+@media (max-width:800px) {
+  .botao {
+    right: 50%;
+   
   }
 }

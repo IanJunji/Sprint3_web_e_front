@@ -15,8 +15,8 @@ function Header() {
         
       </nav>
       <h1>Stocam, tenha controle e segurança.</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto perferendis quo delectus. Natus, earum dolore rem rerum doloribus qui fugit necessitatibus, quibusdam quo quisquam aspernatur omnis saepe consequuntur voluptate temporibus.
-      Amet inventore reiciendis cum distinctio at soluta mollitia ut accusantium dolore excepturi? Nam ad ipsum illum inventore sit vero odit dignissimos blanditiis eaque suscipit voluptates quod nesciunt provident, magnam obcaecati.</p>
+      <p>Gerencie seu estoque com mais eficiência e segurança.
+      O Stocam oferece controle total sobre entradas, saídas e produtos, ajudando você a evitar perdas, economizar tempo e tomar decisões com mais confiança. Simples, rápido e confiável — tudo o que você precisa para organizar seu negócio.</p>
       <a className='botao' href="#">Descobrir</a>
     </div>
     

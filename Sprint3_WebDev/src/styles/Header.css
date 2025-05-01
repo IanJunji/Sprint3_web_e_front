@@ -100,11 +100,18 @@ p{
 }
 @media(max-width:800px) {
   p{
-    width: 75%;
+    width:10%;
   }
   .container > h1 {
     width: 90%;
     margin-top: 15vh;
+  }
+}
+@media(max-width:770px){
+  p{
+
+    margin: 0 0 3rem !important;
+    
   }
 }
 @media(max-width:600px) {
@@ -144,7 +151,8 @@ p{
   .botao {
     display: block;
     text-align: center;
-    max-width: 200px;
+    max-width: 150px;
+    margin: 0;
   }
 }
 @media(max-width:400px) {

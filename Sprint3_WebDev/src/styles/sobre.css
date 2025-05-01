@@ -16,7 +16,6 @@
     font-family: 'Lexend Mega', sans-serif;
     letter-spacing: -2px;
     margin-bottom: 3rem;
-    position: relative;
     padding-bottom: 15px;
     width: 100%;
 }
@@ -194,6 +193,12 @@
 
 .card-card4 {
     background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../images/card4.avif);
+}
+@media (max-width:1500px) {
+    .titulo-fixo{
+        margin: 0 auto !important;
+    }
+    
 }
 
 @media(max-width: 1000px) {
