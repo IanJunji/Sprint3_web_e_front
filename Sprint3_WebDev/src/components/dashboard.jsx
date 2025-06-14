@@ -1,49 +1,64 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { isLoggedIn, logout } from '../utils/auth';
-import '../styles/Dashboard.css';
+import '../styles/dashboard.css'
+function Dashboard(){
+    return(
+        <>
+        <div className="container">
+            <div className="title">
+                <h1>Dashboard de Controle</h1>
+            </div>
+            <div className="quadro">
+                <div className="nav">
+                    
+                    <label htmlFor="local-select">Local: </label>
+                    <select name="models" id="local-select">
+                    <optgroup>
+                        <option value="">Ambulatório 1</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="gemini-2.5-pro-preview-05-06">Ambulatório 2</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="gemini-2.5-pro-preview-05-06">Ambulatório 3</option>
+                    </optgroup>
+                    
+                    </select>
+                     
+                     <label htmlFor="cam-select">Câmera: </label>
+                    <select name="models" id="cam-select">
+                    <optgroup>
+                        <option value="">Câmera 1</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="gemini-2.5-pro-preview-05-06">Câmera 2</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="gemini-2.5-pro-preview-05-06">Câmera 3</option>
+                    </optgroup>
+                
+                    </select>
 
-function Dashboard() {
-  const navigate = useNavigate();
+                     <label htmlFor="medicine-select">Medicamento: </label>
+                    <select name="models" id="medicine-select">
+                    <optgroup>
+                        <option value="">Dorflex</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="gemini-2.5-pro-preview-05-06">Dipirona</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="gemini-2.5-pro-preview-05-06">Buscopan</option>
+                    </optgroup>
+                
+                    </select>
 
-  useEffect(() => {
-    // Verifica se o usuário está logado
-    if (!isLoggedIn()) {
-      navigate('/login');
-    }
-  }, [navigate]);
+                    
 
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
-
-  return (
-    <div className="dashboard">
-      <nav className="dashboard-nav">
-        <h1>STOCAM</h1>
-        <button onClick={handleLogout} className="logout-button">Sair</button>
-      </nav>
-      
-      <div className="dashboard-content">
-        <h2>Bem-vindo ao Dashboard</h2>
-        <div className="dashboard-grid">
-          <div className="dashboard-card">
-            <h3>Produtos</h3>
-            <p>Total: 0</p>
-          </div>
-          <div className="dashboard-card">
-            <h3>Vendas</h3>
-            <p>Total: 0</p>
-          </div>
-          <div className="dashboard-card">
-            <h3>Estoque</h3>
-            <p>Total: 0</p>
-          </div>
-          <div className="dashboard-card">
-            <h3>Usuários</h3>
-            <p>Total: 0</p>
-          </div>
+                    
+                </div>
+                <div className="result">
+                        
+                    </div>
+            </div>
         </div>
       </div>
     </div>
