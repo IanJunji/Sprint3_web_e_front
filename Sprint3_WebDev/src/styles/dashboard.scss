@@ -1,0 +1,115 @@
+// --- Variáveis ---
+$primary-accent: #00bbf941;
+$light-color: #ffffff;
+$dark-text-color: #333; // Adicionada para o texto dentro do quadro
+$main-border-radius: 12px;
+$secondary-border-radius: 7px;
+
+// Breakpoints para design responsivo
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+
+// --- Estilos Base (Mobile-First) ---
+
+// Estilo para o container principal
+.container {
+    padding: 0 1rem; // Adiciona um espaçamento lateral em telas pequenas
+}
+
+.title {
+    margin-top: 2rem; // Menor margem para mobile
+    color: $light-color;
+    font-size: 1.5rem;
+    text-align: center; // Centraliza o título no mobile
+
+    @media (min-width: $tablet-breakpoint) {
+        text-align: left; // Alinha à esquerda em telas maiores
+        margin-top: 5rem;
+        font-size: 1.8rem;
+    }
+}
+
+.quadro {
+    width: 100%;
+    min-height: 75vh; // 'min-height' permite que o quadro cresça se o conteúdo precisar
+    height: auto;
+    background-color: $light-color;
+    margin: 2rem auto; // Margem menor para mobile
+    padding: 20px;
+    border-radius: $secondary-border-radius;
+    color: $dark-text-color;
+
+    // Usando Flexbox para organizar o conteúdo interno (.nav e .result)
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; // Espaçamento entre .nav e .result
+
+    @media (min-width: $tablet-breakpoint) {
+        margin: 5vh auto;
+        padding: 30px;
+    }
+}
+
+.nav {
+    background-color: $primary-accent;
+    padding: 1rem;
+    border-radius: $main-border-radius;
+
+    // Mobile: layout vertical com flexbox
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; // Espaçamento entre os itens do formulário
+
+    // Tablet e Desktop: layout horizontal
+    @media (min-width: $tablet-breakpoint) {
+        flex-direction: row; // Volta ao layout de linha
+        flex-wrap: wrap;     // Permite que os itens quebrem para a próxima linha se não houver espaço
+        align-items: center; // Alinha os itens verticalmente
+        gap: 1.5rem;         // Ajusta o espaçamento para o layout horizontal
+    }
+}
+
+// Estilos para os elementos do formulário dentro da nav
+label {
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    @media (min-width: $tablet-breakpoint) {
+        font-size: 1.4rem;
+    }
+}
+
+select {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; // Ocupa toda a largura no mobile
+
+    optgroup {
+        font-size: 1rem;
+    }
+
+    // No tablet e desktop, a largura não precisa ser 100%
+    @media (min-width: $tablet-breakpoint) {
+        width: auto;      // Largura automática baseada no conteúdo
+        flex-grow: 1;     // Permite que os selects cresçam para preencher o espaço
+        min-width: 150px; // Garante uma largura mínima para legibilidade
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 1.2rem;
+        // Se quiser um layout mais fixo no desktop, pode usar flex-basis
+        // flex-basis: 200px; 
+    }
+}
+
+.result {
+    border: 3px solid $primary-accent;
+    border-radius: $main-border-radius;
+    padding: 1rem;
+
+    // Flex-grow faz com que este elemento ocupe todo o espaço vertical restante
+    // Isso é mais robusto que 'height: 80%'
+    flex-grow: 1;
+}
