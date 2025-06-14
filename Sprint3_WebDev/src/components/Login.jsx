@@ -26,7 +26,7 @@ function Login() {
     try {
       const success = loginUser(formData.email, formData.password);
       if (success) {
-        navigate('/'); // Redireciona para a página inicial após o login
+        navigate('/dashboard'); // Redireciona para o Dashboard após o login
       } else {
         setError('Email ou senha incorretos');
       }
