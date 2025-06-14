@@ -1,16 +1,19 @@
 import '../styles/Header.css'
 import scroll from './scrollToSection'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
     <>
     <div className="container">
       <nav>
-        <a className="logo" href="#">STOCAM</a>
+        <Link to="/" className="logo">STOCAM</Link>
         <div className="navs">
           <a href="#sobre" onClick={(e) => scroll.scrollToSection(e, 'sobre')}>Sobre</a>
           <a href="#banner" onClick={(e) => scroll.scrollToSection(e, 'banner')}>Serviço</a>
           <a href="#contato" onClick={(e) => scroll.scrollToSection(e, 'contato')}>Contato</a>
+          <Link to="/login" className="login-btn">Login</Link>
+          <Link to="/cadastro" className="register-btn">Cadastro</Link>
         </div>
       </nav>
       <h1>Stocam, tenha controle e segurança.</h1>
