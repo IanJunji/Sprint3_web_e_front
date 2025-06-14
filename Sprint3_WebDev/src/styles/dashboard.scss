@@ -17,6 +17,7 @@ $desktop-breakpoint: 1024px;
 }
 
 .title {
+    margin-left: 10%;
     margin-top: 2rem; // Menor margem para mobile
     color: $light-color;
     font-size: 1.5rem;
@@ -30,7 +31,7 @@ $desktop-breakpoint: 1024px;
 }
 
 .quadro {
-    width: 100%;
+    width: 80%;
     min-height: 75vh; // 'min-height' permite que o quadro cresça se o conteúdo precisar
     height: auto;
     background-color: $light-color;
