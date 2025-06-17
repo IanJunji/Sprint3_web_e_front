@@ -1,46 +1,4 @@
-/* Error container */
-.error-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #1e293b;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  color: #e2e8f0;
-  
-  h2 {
-    color: #fca5a5;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    background: #1e1e1e;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: monospace;
-    text-align: left;
-    overflow-x: auto;
-    margin: 20px 0;
-  }
-  
-  button {
-    background: #3b82f6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s;
-    
-    &:hover {
-      background: #2563eb;
-    }
-  }
-}
-
-/* Main container */
+// Main container
 .spreadsheet-container {
   max-width: 1200px;
   margin: 20px auto;
