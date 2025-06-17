@@ -1,67 +1,97 @@
-/* Error container */
-.error-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #1e293b;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  color: #e2e8f0;
-  
-  h2 {
-    color: #fca5a5;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    background: #1e1e1e;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: monospace;
-    text-align: left;
-    overflow-x: auto;
-    margin: 20px 0;
-  }
-  
-  button {
-    background: #3b82f6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s;
-    
-    &:hover {
-      background: #2563eb;
-    }
-  }
+//=================================================================
+//  DASHBOARD STYLES (REFACTORED WITH SASS)
+//=================================================================
+
+//-----------------------------------------------------------------
+// 1. VARIABLES (Theme Configuration)
+//-----------------------------------------------------------------
+
+// Palette
+$color-bg-primary: #0f172a;
+$color-bg-secondary: #1e293b;
+$color-bg-tertiary: #2d3748; // For hover states
+$color-bg-gradient: linear-gradient(135deg, $color-bg-primary 0%, $color-bg-secondary 100%);
+
+$color-accent: #3b82f6;
+$color-accent-hover: #2563eb;
+$color-accent-active: #1d4ed8;
+$color-accent-light: #60a5fa;
+$color-accent-pale: #93c5fd;
+
+$color-text-primary: #f8fafc;
+$color-text-secondary: #e2e8f0;
+$color-text-muted: #94a3b8;
+$color-text-placeholder: #64748b;
+
+$color-error: #fca5a5;
+$color-error-bg: #1e1e1e;
+
+// Borders & Shadows
+$border-color: #334155;
+$border-radius-sm: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 10px;
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.2);
+$shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+
+// Typography
+$font-primary: Arial, sans-serif;
+$font-mono: 'Roboto Mono', monospace;
+
+// Transitions
+$transition-fast: all 0.2s ease;
+$transition-normal: all 0.3s ease;
+
+// Icons (as variables for cleanliness)
+$svg-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+$svg-icon-dropdown: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+
+//-----------------------------------------------------------------
+// 2. MIXINS & EXTENDS (Reusable Patterns)
+//-----------------------------------------------------------------
+
+// Placeholder for shared card styles
+%card-base {
+  background: rgba($color-bg-secondary, 0.7);
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  padding: 18px;
 }
+
+// Mixin for consistent input focus styles
+@mixin input-focus-style($color: $color-accent) {
+  outline: none;
+  border-color: $color;
+  box-shadow: 0 0 0 3px rgba($color, 0.3);
+}
+
+//-----------------------------------------------------------------
+// 3. COMPONENT STYLES
+//-----------------------------------------------------------------
 
 /* Main container */
 .spreadsheet-container {
   max-width: 1200px;
   margin: 20px auto;
   padding: 30px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  color: #e2e8f0;
+  font-family: $font-primary;
+  background: $color-bg-gradient;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  color: $color-text-secondary;
 
   h1 {
     text-align: center;
-    color: #f8fafc;
+    color: $color-text-primary;
     margin-bottom: 25px;
     font-size: 28px;
     font-weight: 600;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 
-  /* Estilos para a seção de totais */
+  /* Section: Totals */
   .totals-container {
     display: flex;
     gap: 20px;
@@ -69,13 +99,11 @@
     flex-wrap: wrap;
 
     .total-card {
+      @extend %card-base; // Using the placeholder
       flex: 1;
       min-width: 200px;
-      background: rgba(30, 41, 59, 0.7);
-      border-radius: 8px;
       padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      border-left: 4px solid #3b82f6;
+      border-left: 4px solid $color-accent;
       transition: transform 0.2s, box-shadow 0.2s;
       
       &:hover {
@@ -85,7 +113,7 @@
       
       .total-label {
         display: block;
-        color: #94a3b8;
+        color: $color-text-muted;
         font-size: 0.9em;
         margin-bottom: 8px;
         text-transform: uppercase;
@@ -95,123 +123,147 @@
       .total-value {
         font-size: 2em;
         font-weight: 700;
-        color: #f8fafc;
-        font-family: 'Roboto Mono', monospace;
+        color: $color-text-primary;
+        font-family: $font-mono;
       }
     }
   }
 
+  /* Section: Filters and API Form */
   .filters {
+    @extend %card-base; // Using the placeholder
     display: flex;
     gap: 15px;
     margin-bottom: 25px;
-    padding: 18px;
-    background: rgba(30, 41, 59, 0.7);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    border: 1px solid rgba($color-accent, 0.3);
     flex-wrap: wrap;
+  }
+  
+  .api-form-container, .filters {
+    .search-input, .select-input {
+      width: 100%;
+      padding: 12px 15px 12px 45px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-sm;
+      font-size: 14px;
+      transition: $transition-normal;
+      background-color: $color-bg-secondary;
+      color: $color-text-secondary;
+      box-shadow: $shadow-sm;
+
+      &::placeholder {
+        color: $color-text-placeholder;
+      }
+
+      &:hover {
+        border-color: $color-accent-light;
+      }
+
+      &:focus {
+        @include input-focus-style(); // Using the mixin
+      }
+      
+      &:disabled {
+        cursor: not-allowed;
+        background-color: $color-bg-tertiary;
+        opacity: 0.6;
+      }
+    }
+
+    .search-input {
+      background-image: $svg-icon-search;
+      background-repeat: no-repeat;
+      background-position: 15px center;
+      background-size: 16px;
+    }
+
+    .select-input {
+      background-image: $svg-icon-dropdown;
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      appearance: none;
+      padding-right: 40px;
+      cursor: pointer;
+      
+      option {
+        background-color: $color-bg-secondary;
+        color: $color-text-secondary;
+      }
+    }
+    
+    .api-button {
+      padding: 0 20px;
+      background-color: $color-accent;
+      color: white;
+      border: none;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s;
+      white-space: nowrap;
+      
+      &:hover {
+        background-color: $color-accent-hover;
+      }
+      
+      &:active {
+        background-color: $color-accent-active;
+      }
+
+      &:disabled {
+        background-color: $color-bg-tertiary;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+    }
+  }
+  
+  .api-form-container {
+    margin-bottom: 25px;
+    padding: 18px;
+    background: rgba($color-bg-secondary, 0.7);
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-md;
     
     .api-form {
       display: flex;
       gap: 10px;
-      width: 100%;
-      
-      .search-input {
-        flex: 1;
-        min-width: 200px;
-      }
-      
-      .api-button {
-        padding: 0 20px;
-        background-color: #3b82f6;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 500;
-        transition: background-color 0.2s;
-        white-space: nowrap;
-        
-        &:hover {
-          background-color: #2563eb;
-        }
-        
-        &:active {
-          background-color: #1d4ed8;
-        }
-      }
-    }
-    
-    .api-message {
-      margin-top: 8px;
-      font-size: 0.85em;
-      color: #60a5fa;
-      font-style: italic;
-    }
-
-    .filter-group {
-      flex: 1;
-      min-width: 200px;
-
-      .search-input, .select-input {
-        width: 100%;
-        padding: 12px 15px 12px 45px;
-        border: 1px solid #334155;
-        border-radius: 6px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        background-color: #1e293b;
-        color: #e2e8f0;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
-        &::placeholder {
-          color: #64748b;
-        }
-
-        &:hover {
-          border-color: #60a5fa;
-        }
-
-        &:focus {
-          outline: none;
-          border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-        }
-      }
-      
-      .search-input {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: 15px center;
-        background-size: 16px;
-      }
-      
-      .select-input {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 16px;
-        appearance: none;
-        padding-right: 40px;
-        cursor: pointer;
-      }
-      
-      option {
-        background-color: #1e293b;
-        color: #e2e8f0;
-        padding: 8px;
-      }
     }
   }
+  
+  .api-message {
+    padding: 8px 12px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: $color-accent-light;
+    background: rgba($color-bg-primary, 0.5);
+    border-radius: $border-radius-sm;
+    border-left: 3px solid $color-accent-light;
+    &.error {
+      color: $color-error;
+      border-left-color: $color-error;
+    }
+  }
+  
+  .initial-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: $color-text-muted;
+    background: rgba($color-bg-secondary, 0.5);
+    border: 1px dashed $border-color;
+    border-radius: $border-radius-md;
+    margin-top: 25px;
+  }
 
+  /* Section: Spreadsheet Table */
   .spreadsheet {
     width: 100%;
     overflow-x: auto;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    background: #1e293b;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    background: $color-bg-secondary;
+    box-shadow: $shadow-md;
 
     table {
       width: 100%;
@@ -220,125 +272,71 @@
       th, td {
         padding: 14px 16px;
         text-align: left;
-        border-bottom: 1px solid #334155;
-        color: #e2e8f0;
+        border-bottom: 1px solid $border-color;
+        color: $color-text-secondary;
       }
 
       thead {
-        background-color: #0f172a;
-        border-bottom: 2px solid #3b82f6;
+        background-color: $color-bg-primary;
+        border-bottom: 2px solid $color-accent;
       }
 
       th {
         font-weight: 600;
-        color: #93c5fd;
+        color: $color-accent-pale;
         text-transform: uppercase;
         font-size: 0.75em;
         letter-spacing: 0.05em;
-        position: relative;
-        cursor: pointer;
-        user-select: none;
-        transition: all 0.2s ease;
         white-space: nowrap;
-        
-        &::after {
-          content: '⇅';
-          display: inline-block;
-          margin-left: 5px;
-          font-size: 0.9em;
-          opacity: 0.5;
-          transition: all 0.2s ease;
-        }
-        
-        &:hover::after {
-          opacity: 1;
-        }
-        
-        &.sort-asc::after {
-          content: '↑';
-          opacity: 1;
-          color: #60a5fa;
-        }
-        
-        &.sort-desc::after {
-          content: '↓';
-          opacity: 1;
-          color: #60a5fa;
-        }
-        
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        transition: $transition-fast;
+
         &:hover {
-          background-color: #1e293b;
+          background-color: $color-bg-tertiary;
         }
-        
-        &.sortable {
+
+        // Combined sort indicator styles
+        &.sortable, &.sort-asc, &.sort-desc {
           padding-right: 30px;
-          
           &::after {
-            content: "⇅";
             position: absolute;
             right: 12px;
             top: 50%;
             transform: translateY(-50%);
-            opacity: 0.5;
-            font-size: 0.8em;
-            color: #60a5fa;
-            transition: all 0.2s ease;
-          }
-          
-          &:hover::after {
-            opacity: 1;
-          }
-          
-          &.sort-asc::after {
-            content: "↑";
-            opacity: 1;
-          }
-          
-          &.sort-desc::after {
-            content: "↓";
-            opacity: 1;
+            font-size: 1.2em;
+            opacity: 0.6;
+            transition: $transition-fast;
           }
         }
+        &:hover::after {
+          opacity: 1;
+        }
+
+        &.sortable::after { content: '⇅'; }
+        &.sort-asc::after { content: '↑'; color: $color-accent-light; opacity: 1; }
+        &.sort-desc::after { content: '↓'; color: $color-accent-light; opacity: 1; }
       }
       
       tbody {
         tr {
-          background-color: #1e293b;
           transition: background-color 0.2s ease;
-
           &:hover {
-            background-color: #2d3748;
+            background-color: $color-bg-tertiary;
           }
-
           &:last-child td {
             border-bottom: none;
           }
         }
 
-        // Zebra striping
-        tr:nth-child(even) {
-          background-color: #1e293b;
-
-          &:hover {
-            background-color: #2d3748;
-          }
-        }
-
-        // Cell styles
         td {
-          color: #e2e8f0;
-          border-bottom: 1px solid #334155;
-          
           &.number {
-            font-family: "Roboto Mono", "Courier New", monospace;
+            font-family: $font-mono;
             text-align: center;
-            color: #93c5fd;
+            color: $color-accent-pale;
             font-weight: 500;
-            background-color: #1e293b;
-            border-left: 1px solid #334155;
-            border-right: 1px solid #334155;
           }
-
           &.capitalize {
             text-transform: capitalize;
           }
@@ -346,80 +344,111 @@
 
         .no-results {
           text-align: center;
-          color: #94a3b8;
+          color: $color-text-muted;
           font-style: italic;
           padding: 30px;
-          background-color: #1e293b;
-          grid-column: 1 / -1;
         }
       }
     }
   }
+}
 
-  // Responsive adjustments
-  @media (max-width: 992px) {
-    padding: 20px 15px;
+/* Error page container */
+.error-container {
+  // Styles are kept separate as it's a full-page state
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: $color-bg-secondary;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  text-align: center;
+  color: $color-text-secondary;
+  
+  h2 {
+    color: $color-error;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    background: $color-error-bg;
+    padding: 15px;
+    border-radius: $border-radius-sm;
+    font-family: $font-mono;
+    text-align: left;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  button {
+    background: $color-accent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
     
+    &:hover {
+      background: $color-accent-hover;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// 4. RESPONSIVE ADJUSTMENTS
+//-----------------------------------------------------------------
+@media (max-width: 992px) {
+  .spreadsheet-container {
+    padding: 20px 15px;
     .totals-container {
-      gap: 15px;
-      
       .total-card {
         min-width: calc(50% - 10px);
       }
     }
-    
-    .filters {
+    .filters, .api-form-container {
       flex-direction: column;
       gap: 12px;
       padding: 15px;
-      
       .api-form {
         flex-direction: column;
-        
         .api-button {
-          padding: 10px;
+          padding: 12px;
           width: 100%;
         }
       }
     }
   }
+}
   
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .spreadsheet-container {
     padding: 15px 10px;
     margin: 10px;
-    border-radius: 8px;
+    border-radius: $border-radius-md;
 
     h1 {
       font-size: 22px;
       margin-bottom: 20px;
     }
     
-    .totals-container {
-      .total-card {
-        min-width: 100%;
-        
-        .total-value {
-          font-size: 1.6em;
-        }
+    .totals-container .total-card {
+      min-width: 100%;
+      .total-value {
+        font-size: 1.6em;
       }
     }
 
-    .spreadsheet {
-      border-radius: 6px;
-      border: 1px solid #334155;
-
-      table {
-        th, td {
-          padding: 12px 10px;
-          font-size: 13px;
-        }
-        
-        th {
-          white-space: nowrap;
-          
-          &.sortable {
-            padding-right: 25px;
-          }
+    .spreadsheet table {
+      th, td {
+        padding: 12px 10px;
+        font-size: 13px;
+      }
+      th {
+        &.sortable, &.sort-asc, &.sort-desc {
+          padding-right: 25px;
         }
       }
     }
