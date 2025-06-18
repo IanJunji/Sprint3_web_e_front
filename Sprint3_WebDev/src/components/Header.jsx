@@ -16,9 +16,9 @@ function Header() {
           <Link to="/cadastro" className="register-btn">Cadastro</Link>
         </div>
       </nav>
-      <h1>Stocam, tenha controle e segurança.</h1>
-      <p>Gerencie seu estoque com mais eficiência e segurança.
-      O Stocam oferece controle total sobre entradas, saídas e produtos, ajudando você a evitar perdas, economizar tempo e tomar decisões com mais confiança. Simples, rápido e confiável — tudo o que você precisa para organizar seu negócio.</p>
+      <h1>Stocam, tenha <span className="highlight">controle</span> e <span className="highlight">segurança</span>.</h1>
+      <p>Gerencie seu estoque com mais <span className="highlight">eficiência</span> e <span className="highlight">segurança</span>.
+      O Stocam oferece <span className="highlight">controle total</span> sobre entradas, saídas e produtos, ajudando você a <span className="highlight">evitar perdas</span>, <span className="highlight">economizar tempo</span> e tomar decisões com mais <span className="highlight">confiança</span>. <span className="highlight">Simples</span>, <span className="highlight">rápido</span> e <span className="highlight">confiável</span> — tudo o que você precisa para organizar seu negócio.</p>
       <a className='botao' href="#descobrir"onClick={(e) => scroll.scrollToSection(e, 'sobre')}>Descobrir</a>
     </div>
     </>

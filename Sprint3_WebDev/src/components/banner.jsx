@@ -1,4 +1,5 @@
 import "../styles/banner.css";
+import { Link } from 'react-router-dom';
 
 function Banner() {
   return (
@@ -13,7 +14,7 @@ function Banner() {
             mercado.
           </h2>
           <h3>Faça parte do novo mundo do controle de armazenagem.</h3>
-          <a className='botao' href="#">Vamos!</a>
+          <Link to="/cadastro" className='botao'>Vamos!</Link>
         </div>
       </section>
     </>
