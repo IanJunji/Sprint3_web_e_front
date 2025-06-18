@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../utils/auth';
-import '../styles/Login.scss';
+import '../styles/Login.css';
 
 function Login() {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ function Login() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page login-page">
       <div className="auth-container">
         <Link to="/" className="auth-logo">STOCAM</Link>
         <div className="login-box">

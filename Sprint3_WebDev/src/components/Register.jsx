@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { registerUser } from '../utils/auth';
-import '../styles/Login.scss';
+import '../styles/Login.css';
 
 function Register() {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ function Register() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page register-page">
       <div className="auth-container">
         <Link to="/" className="auth-logo">STOCAM</Link>
         <div className="login-box">
